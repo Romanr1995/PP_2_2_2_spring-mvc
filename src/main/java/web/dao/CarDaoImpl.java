@@ -4,7 +4,6 @@ import org.springframework.stereotype.Repository;
 import web.model.Car;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Repository
 public class CarDaoImpl implements CarDao {
@@ -16,7 +15,7 @@ public class CarDaoImpl implements CarDao {
             new Car("Model5", 5, 1999));
 
     @Override
-    public List<Car> getCars(int count) {
-        return cars.stream().limit(count).collect(Collectors.toList());
+    public List<Car> getCars() {
+        return cars;
     }
 }
